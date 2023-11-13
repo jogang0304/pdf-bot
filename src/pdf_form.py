@@ -33,7 +33,7 @@ async def process_photo(message: types.Message, state: FSMContext):
         logging.error("Failed to download photo")
         await message.answer("Failed to download photo")
         return
-    await state.update_data({str(message.date): downloaded_photo})
+    await state.update_data({photos[-1].file_unique_id: downloaded_photo})
     logging.info(await state.get_data())
 
     await message.reply(
