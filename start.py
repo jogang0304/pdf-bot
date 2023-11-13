@@ -1,4 +1,3 @@
-import asyncio
 import logging
 import os
 import sys
@@ -18,4 +17,4 @@ if not TOKEN:
     sys.exit(1)
 
 
-asyncio.run(main(TOKEN))
+main(TOKEN)

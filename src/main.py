@@ -35,7 +35,7 @@ async def on_startup(bot: Bot) -> None:
     )
 
 
-async def main(TOKEN: str) -> None:
+def main(TOKEN: str) -> None:
     dp.include_router(pdf_router)
     bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
     app = web.Application()
