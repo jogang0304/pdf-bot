@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 dotenv.load_dotenv()
 
-TOKEN = os.getenv("BOT_TOKEN")
+TOKEN = os.getenv("TOKEN")
 
 if not TOKEN:
     logging.error("No TOKEN environment variable")
