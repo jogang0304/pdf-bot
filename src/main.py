@@ -37,6 +37,7 @@ async def on_startup(bot: Bot) -> None:
 
 def main(TOKEN: str) -> None:
     dp.include_router(pdf_router)
+    dp.startup.register(on_startup)
     bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
     app = web.Application()
     webhook_requests_handler = SimpleRequestHandler(
