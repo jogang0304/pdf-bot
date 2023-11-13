@@ -1,0 +1,21 @@
+import asyncio
+import logging
+import os
+import sys
+
+import dotenv
+
+from src.main import main
+
+logging.basicConfig(level=logging.INFO, stream=sys.stdout)
+
+dotenv.load_dotenv()
+
+TOKEN = os.getenv("BOT_TOKEN")
+
+if not TOKEN:
+    logging.error("No TOKEN environment variable")
+    sys.exit(1)
+
+
+asyncio.run(main(TOKEN))
