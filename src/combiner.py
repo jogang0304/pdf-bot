@@ -7,14 +7,11 @@ from pypdf import PdfWriter
 
 
 def combine_images_to_pdf(images: List[BytesIO]) -> BytesIO:
-    # Create a new PDF file merger
     pdf_merger = PdfWriter()
 
     one_photo_max_size = 20_000_000 // len(images)
 
-    # Loop through each image and add it as a new page to the PDF
     for image in images:
-        # Open the image using PIL
         pil_image = Image.open(image)
 
         while image.getbuffer().nbytes > one_photo_max_size:
